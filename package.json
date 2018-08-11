@@ -1,0 +1,24 @@
+{
+  "name": "RxCurator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam-pop/RxCurator.git"
+  },
+  "keywords": [],
+  "author": "Samuel Poplovitch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sam-pop/RxCurator/issues"
+  },
+  "homepage": "https://github.com/sam-pop/RxCurator#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
