@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // Initialize and configure our express session
 app.use(
   session({
-    secret: "big x`x`x`AAbalagan",
+    secret: "big balagan",
     resave: true,
     saveUninitialized: true
   })
