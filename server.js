@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Initialize body parser middleware
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Serve up static assets (for heroku deployment)
 if (process.env.NODE_ENV === "production") {
@@ -40,7 +40,10 @@ app.use(passport.session());
 mongoose.Promise = Promise;
 
 // Connect to db
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rxcurator");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/rxcurator",
+  { useNewUrlParser: true }
+);
 
 // Start the API server
 app.listen(PORT);
