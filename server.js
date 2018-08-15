@@ -29,10 +29,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static("client/build"));
+
 // Routes (API and view)
 app.use(routes);
-
-app.use(express.static("client/build"));
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
