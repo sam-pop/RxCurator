@@ -1,9 +1,10 @@
 window.onload = function() {
   alert("hey!");
-  if (
-    navigator.mediaDevices &&
-    typeof navigator.mediaDevices.getUserMedia === "function"
-  ) {
+  // if (
+  //   navigator.mediaDevices &&
+  //   typeof navigator.mediaDevices.getUserMedia === "function"
+  // )
+  {
     Quagga.init(
       {
         inputStream: {
