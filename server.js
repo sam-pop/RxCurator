@@ -32,6 +32,8 @@ app.use(passport.session());
 // Routes (API and view)
 app.use(routes);
 
+app.use(express.static("client/build"));
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
