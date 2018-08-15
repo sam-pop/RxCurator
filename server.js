@@ -5,7 +5,7 @@ const passport = require("./config/passport");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-const routes = require("./routes");
+// const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
 
@@ -29,10 +29,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static("client/build"));
-
 // Routes (API and view)
-app.use(routes);
+// app.use(routes);
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
