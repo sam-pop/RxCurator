@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Initialize body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
 // Serve up static assets (for heroku deployment)
 if (process.env.NODE_ENV === "production") {
