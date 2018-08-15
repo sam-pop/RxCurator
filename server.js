@@ -16,6 +16,15 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Serve up static assets (for heroku deployment)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
 // Initialize and configure our express session
 app.use(
   session({
@@ -34,15 +43,6 @@ mongoose.Promise = Promise;
 
 // Connect to db
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rxcurator");
-
-// Serve up static assets (for heroku deployment)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 // Start the API server
 app.listen(PORT);
