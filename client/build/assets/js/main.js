@@ -29,5 +29,7 @@ window.onload = function() {
         });
       }
     );
+  } else {
+    alert("getUserMedia not supported!");
   }
 };
