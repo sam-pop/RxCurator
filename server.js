@@ -40,10 +40,7 @@ app.use(passport.session());
 mongoose.Promise = Promise;
 
 // Connect to db
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/rxcurator",
-  { useNewUrlParser: true }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rxcurator");
 
 // Start the API server
 app.listen(PORT);
