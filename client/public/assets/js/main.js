@@ -1,35 +1,41 @@
 window.onload = function() {
-  alert("hey!");
-  if (
-    navigator.mediaDevices &&
-    typeof navigator.mediaDevices.getUserMedia === "function"
-  ) {
-    Quagga.init(
-      {
-        inputStream: {
-          name: "Live",
-          type: "LiveStream",
-          target: document.querySelector("#test")
-        },
-        decoder: {
-          readers: ["ean_reader"]
-          // readers: ["code_128_reader"]
-        }
+  alert("onload run!");
+
+  Quagga.init(
+    {
+      inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        numOfWorkers: navigator.hardwareConcurrency,
+        target: document.querySelector("#test")
       },
-      function(err) {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        console.log("Initialization finished. Ready to start");
-        Quagga.start();
-        Quagga.onDetected(function(data) {
-          console.log(data);
-          alert(data.codeResult.code);
+      decoder: {
+        readers: [
+          "ean_reader"
+          // "ean_8_reader",
+          // "code_39_reader",
+          // "code_39_vin_reader",
+          // "codabar_reader",
+          // "upc_reader",
+          // "upc_e_reader"
+        ]
+      }
+    },
+    function(err) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      Quagga.start();
+
+      {
+        Quagga.onDetected(function(result) {
+          var last_code = result.codeResult.code;
+
+          // Quagga.stop();
+          console.log("barcode: " + last_code);
         });
       }
-    );
-  } else {
-    alert("getUserMedia not supported!");
-  }
+    }
+  );
 };
