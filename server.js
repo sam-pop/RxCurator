@@ -5,6 +5,7 @@ const passport = require("./config/passport");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
+const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
 
@@ -16,6 +17,9 @@ app.use(logger("dev"));
 // Initialize body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Routes
+app.use(routes);
 
 // Serve up static assets (for heroku deployment)
 if (process.env.NODE_ENV === "production") {
