@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Result extends Component {
   render() {
-    const result = this.props.result
+    const result = this.props.result;
 
-    if (!result) { return null }
+    if (!result) {
+      return null;
+    }
 
-    return (
-      <li> {result.codeResult.code} [{result.codeResult.format}] </li>
-    )
+    return <li> {result} </li>;
   }
-
 }
 
-export default Result
+export default Result;

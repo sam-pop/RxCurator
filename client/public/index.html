@@ -10,6 +10,18 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <style>
+    /* #root {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    } */
+    .drawingBuffer {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,6 +39,7 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <div id="root"></div>
+
   <!-- <div id="test"></div> -->
   <!-- <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera" onchange="test()"> -->
   <!-- <input type="file" accept="image/*"> -->
