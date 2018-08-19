@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Scan from "./pages/Scan";
+import Signin from "./pages/Signin";
 // import Home from "./pages/Detail";
-// import Signin from "./pages/NoMatch";
 // import Nav from "./components/Nav";
 
 const App = () => (
@@ -10,8 +10,8 @@ const App = () => (
     <div>
       {/* <Nav /> */}
       <Switch>
-        <Route exact path="/" component={Scan} />
-        {/* <Route exact path="/books" component={Books} /> */}
+        <Route exact path="/scan" component={Scan} />
+        <Route exact path="/signin" component={Signin} />
         {/* <Route exact path="/books/:id" component={Detail} /> */}
         {/* <Route component={NoMatch} /> */}
       </Switch>

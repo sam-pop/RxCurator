@@ -9,7 +9,7 @@ const validateEmail = function(email) {
 
 const SALT_WORK_FACTOR = 10;
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
   email: {
     type: String,
     index: { unique: true },
