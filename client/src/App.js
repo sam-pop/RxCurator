@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import Scanner from "./components/Scanner";
-import Result from "./components/Result";
+import Barcode from "./components/Barcode";
 
 class App extends Component {
   state = {
     scanning: false,
-    results: []
+    barcodes: [],
+    meds: []
   };
 
   _scan = () => {
     this.setState({ scanning: !this.state.scanning });
   };
 
-  _onDetected = result => {
-    console.log(this.state.results);
-    if (this.state.results.indexOf(result) === -1)
+  _onDetected = ean => {
+    console.log(this.state.barcodes);
+    if (this.state.barcodes.indexOf(ean) === -1)
       this.setState({
-        results: this.state.results.concat([result])
+        barcodes: this.state.barcodes.concat([ean])
       });
   };
 
@@ -27,9 +28,9 @@ class App extends Component {
           {this.state.scanning ? "Stop" : "Start"}
         </button>
         {this.state.scanning ? <Scanner onDetected={this._onDetected} /> : null}
-        <ul className="results">
-          {this.state.results.map((result, i) => (
-            <Result key={result + i} result={result} />
+        <ul className="barcodes">
+          {this.state.barcodes.map((barcode, i) => (
+            <Barcode key={barcode + i} barcode={barcode} />
           ))}
         </ul>
       </div>

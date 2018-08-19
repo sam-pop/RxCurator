@@ -87,8 +87,8 @@ class Scanner extends Component {
   };
 
   _onDetected = result => {
-    let ndc = result.codeResult.code.substr(2, 8);
-    let ndcFormatted = ndc.slice(0, 4) + "-" + ndc.slice(4);
+    let ndcBarcode = result.codeResult.code.substr(2, 8);
+    let ndcFormatted = ndcBarcode.slice(0, 4) + "-" + ndcBarcode.slice(4);
     this.props.onDetected(ndcFormatted);
   };
 
