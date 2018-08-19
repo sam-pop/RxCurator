@@ -1,18 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Scanner from "./components/Scanner";
+import Result from "./components/Result";
 
 class App extends Component {
+  state = {
+    scanning: false,
+    results: []
+  };
+
+  _scan = () => {
+    this.setState({ scanning: !this.state.scanning });
+  };
+
+  _onDetected = result => {
+    this.setState({ results: this.state.results.concat([result]) });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <button onClick={this._scan}>
+          {this.state.scanning ? "Stop" : "Start"}
+        </button>
+        <ul className="results">
+          {this.state.results.map((result, i) => (
+            <Result key={result.codeResult.code + i} result={result} />
+          ))}
+        </ul>
+        {this.state.scanning ? <Scanner onDetected={this._onDetected} /> : null}
       </div>
     );
   }
