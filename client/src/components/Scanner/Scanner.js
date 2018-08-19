@@ -87,8 +87,9 @@ class Scanner extends Component {
   };
 
   _onDetected = result => {
-    this.props.onDetected(result.codeResult.code);
-    // Quagga.stop();
+    let ndc = result.codeResult.code.substr(2, 8);
+    let ndcFormatted = ndc.slice(0, 4) + "-" + ndc.slice(4);
+    this.props.onDetected(ndcFormatted);
   };
 
   render() {
