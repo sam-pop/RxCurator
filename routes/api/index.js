@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const signinRoutes = require("./signin");
+const ndcRoute = require("./NDC");
 
 // Signin routes
-router.use("/signin", signinRoutes);
+router.use("/NDC", ndcRoute);
 
 module.exports = router;

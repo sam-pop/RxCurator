@@ -11,9 +11,6 @@ const App = () => (
       {/* <Nav /> */}
       <Switch>
         <Route exact path="/scan" component={Scan} />
-        <Route exact path="/signin" component={Signin} />
-        {/* <Route exact path="/books/:id" component={Detail} /> */}
-        {/* <Route component={NoMatch} /> */}
       </Switch>
     </div>
   </Router>

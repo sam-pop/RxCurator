@@ -25,7 +25,7 @@ class Scan extends Component {
     return (
       <div>
         <button onClick={this._scan}>
-          {this.state.scanning ? "Stop" : "Start"}
+          {this.state.scanning ? "Stop" : "Start Scanning"}
         </button>
         {this.state.scanning ? <Scanner onDetected={this._onDetected} /> : null}
         <ul className="barcodes">
