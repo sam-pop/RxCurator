@@ -6,7 +6,6 @@ import Scan from "./pages/Scan";
 const App = () => (
   <Router>
     <div>
-      {/* <Nav /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/scan" component={Scan} />
