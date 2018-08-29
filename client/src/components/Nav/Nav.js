@@ -7,9 +7,9 @@ export default class Nav extends Component {
     return (
       <nav className="Nav">
         <div className="Nav__container">
-          <Link to="/" className="Nav__brand">
-            <img src="logo.svg" className="Nav__logo" />
-          </Link>
+          {/* <Link to="/" className="Nav__brand">
+            <img src="" className="Nav__logo" />
+          </Link> */}
 
           <div className="Nav__right">
             <ul className="Nav__item-wrapper">
