@@ -5,9 +5,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Nav />
-
         <h1>Welcome to RxCurator</h1>
+        <Nav />
       </div>
     );
   }
