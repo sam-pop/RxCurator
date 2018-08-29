@@ -19,13 +19,8 @@ export default class Nav extends Component {
                 </Link>
               </li>
               <li className="Nav__item">
-                <Link className="Nav__link" to="/path2">
-                  Link 2
-                </Link>
-              </li>
-              <li className="Nav__item">
-                <Link className="Nav__link" to="/path3">
-                  Link 3
+                <Link className="Nav__link" to="/api/meds">
+                  My Meds
                 </Link>
               </li>
             </ul>
