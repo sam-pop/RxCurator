@@ -19,11 +19,11 @@ export default class Nav extends Component {
                   Scan
                 </Link>
               </li>
-              {/* <li className="Nav__item">
+              <li className="Nav__item">
                 <Link className="Nav__link" to="/api/meds">
                   My Meds
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
