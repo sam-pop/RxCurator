@@ -24,6 +24,11 @@ export default class Nav extends Component {
                   My Meds
                 </Link>
               </li>
+               <li className="Nav__item">
+                <Link className="Nav__link" to="/about">
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
